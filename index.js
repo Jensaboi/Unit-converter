@@ -9,6 +9,7 @@ const containerEl = document.getElementById("container-el");
 let isDarkMode = JSON.parse(localStorage.getItem("darkmode") || "false");
 
 applyThemeSettings(isDarkMode);
+renderElements();
 
 function applyThemeSettings(theme) {
     document.body.classList.toggle("dark-mode", theme);
@@ -46,9 +47,18 @@ function renderElements() {
 function calculateMetrics(num) {
     if (isNaN(num)) {
         return [
-            { title: "Length (Meter/Feet)" },
-            { title: "Volume (Liters/Gallons)" },
-            { title: "Mass (Kilograms/Pounds)" },
+            {
+                title: "Length (Meter/Feet)",
+                value: "No input to calculate",
+            },
+            {
+                title: "Volume (Liters/Gallons)",
+                value: "No input to calculate",
+            },
+            {
+                title: "Mass (Kilograms/Pounds)",
+                value: "No input to calculate",
+            },
         ];
     }
     return [
