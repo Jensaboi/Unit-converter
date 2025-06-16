@@ -44,7 +44,13 @@ function renderElements() {
 
 // returns array with objects. title: string(metric type), value: string(calculation)
 function calculateMetrics(num) {
-    if (isNaN(num)) return [];
+    if (isNaN(num)) {
+        return [
+            { title: "Length (Meter/Feet)" },
+            { title: "Volume (Liters/Gallons)" },
+            { title: "Mass (Kilograms/Pounds)" },
+        ];
+    }
     return [
         {
             title: "Length (Meter/Feet)",
